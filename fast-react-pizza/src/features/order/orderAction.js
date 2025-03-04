@@ -1,6 +1,11 @@
 import { redirect } from "react-router-dom";
 import { createOrder } from "../../services/apiRestaurant";
 
+// const isValidPhone = (str) =>
+//   /^\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}$/.test(
+//     str,
+//   );
+
 export async function action({ request }) {
   const formData = await request.formData();
   const data = Object.fromEntries(formData);
@@ -12,8 +17,6 @@ export async function action({ request }) {
   };
 
   const newOrder = await createOrder(order);
-
-  console.log(newOrder);
 
   return redirect(`/order/${newOrder.id}`);
 }
