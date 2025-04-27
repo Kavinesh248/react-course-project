@@ -5,6 +5,7 @@
 @layer base {
   body {
     font-family: "Roboto Mono", monospace;
+    background-color: rgb(245 245 244 / 1);
   }
 }
 
